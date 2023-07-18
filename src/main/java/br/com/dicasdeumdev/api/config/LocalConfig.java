@@ -1,6 +1,6 @@
 package br.com.dicasdeumdev.api.config;
 
-import br.com.dicasdeumdev.api.domain.User;
+import br.com.dicasdeumdev.api.domain.Users;
 import br.com.dicasdeumdev.api.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -18,8 +18,8 @@ public class LocalConfig {
 
     @Bean
     public void startDB() {
-        User u1 = new User(null, "Marcia", "marcia@mail.com", "123");
-        User u2 = new User(null, "Luiz", "luiz@mail.com", "123");
+        Users u1 = new Users(null, "Marcia", "marcia@mail.com", "123");
+        Users u2 = new Users(null, "Luiz", "luiz@mail.com", "123");
 
         repository.saveAll(List.of(u1, u2));
     }

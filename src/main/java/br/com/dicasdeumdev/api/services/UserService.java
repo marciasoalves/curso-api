@@ -1,7 +1,7 @@
 package br.com.dicasdeumdev.api.services;
 
-import br.com.dicasdeumdev.api.domain.User;
+import br.com.dicasdeumdev.api.domain.Users;
 
 public interface UserService {
-    User findById(Integer id);
+    Users findById(Integer id);
 }
