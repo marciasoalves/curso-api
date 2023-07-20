@@ -33,6 +33,7 @@ class UserServiceImplTest {
     private static final String NAME     = "marcia";
     private static final String EMAIL    = "marcia@mail.com";
     private static final String PASSWORD = "123";
+
     private static final String OBJETO_NAO_ENCONTRADO = "Objeto não encontrado";
     private static final String E_MAIL_JA_CADASTRADO_NO_SISTEMA ="E-mail já cadastrado no sistema";
 
