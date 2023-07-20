@@ -117,13 +117,24 @@ class UserServiceImplTest {
             optionalUsers.get().setId(2);
             service.create(userDTO);
         }catch (Exception ex) {
-            assertEquals(DataIntegratyViolationException.class, ex.getMessage());
+            assertEquals(DataIntegratyViolationException.class, ex.getClass());
             assertEquals(E_MAIL_JA_CADASTRADO_NO_SISTEMA, ex.getMessage());
         }
     }
 
     @Test
-    void update() {
+    void whenUpdateReturnSuccess() {
+        when(repository.save(any())).thenReturn(users);
+
+        Users response = service.update(userDTO);
+
+        assertNotNull(response);
+        assertEquals(Users.class, response.getClass());
+        assertEquals(ID, response.getId());
+        assertEquals(NAME, response.getName());
+        assertEquals(EMAIL, response.getEmail());
+        assertEquals(PASSWORD, response.getPassword());
+
     }
 
     @Test
